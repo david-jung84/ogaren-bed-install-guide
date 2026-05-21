@@ -1,0 +1,150 @@
+{
+  "_meta": {
+    "drive_root": "1YSGhzk1HySn2T-f8LfWMp4lwayj0ajZa",
+    "last_check": "2026-05-21",
+    "next_check_hint": "매주 월요일 09:00 KST",
+    "note": "이 파일은 _weekly_check.py가 자동 업데이트합니다. 수동으로 슬러그 추가 시 'tracked'에 항목 추가."
+  },
+  "tracked": {
+    "signature-mattress": {
+      "guide_html": "guides/signature-mattress.html",
+      "drive_file_id": "1WFwIy2NfvMXoHl_XWERIBCRO-PWRcBq6",
+      "drive_title": "시그니처_설치_주의사항_231025.pdf",
+      "last_modified": "2023-10-25T06:35:35Z",
+      "pages": 4
+    },
+    "lundvik": {
+      "guide_html": "guides/lundvik.html",
+      "drive_file_id": "1TDvsEoX4FP2gFORrXF_StyrczXr5Nraw",
+      "drive_title": "누어_룬드빅_조립도&부품도_250331.pdf",
+      "last_modified": "2025-04-11T08:21:30Z",
+      "pages": 27
+    },
+    "lundvik-low": {
+      "guide_html": "guides/lundvik-low.html",
+      "drive_file_id": "15Y7U8mvCcKcNO-kblwj6OwrTR6GFYm-m",
+      "drive_title": "260130_룬드빅 로우_조립도.pdf",
+      "last_modified": "2026-01-30T07:36:59Z",
+      "pages": 10
+    },
+    "lundvik-sliding": {
+      "guide_html": "guides/lundvik-sliding.html",
+      "drive_file_id": "1XDqa7u5UOt12BS5vMH9_Zeudk803eS9E",
+      "drive_title": "260130_룬드빅 슬라이딩_조립도.pdf",
+      "last_modified": "2026-01-30T07:37:18Z",
+      "pages": 12
+    },
+    "lund": {
+      "guide_html": "guides/lund.html",
+      "drive_file_id": "1l3X6VTjEEBSpFTNxFJpnSkavQXai0typ",
+      "drive_title": "부품도&조립도_룬드 수납형+헤드_240906.pdf",
+      "last_modified": "2024-09-06T04:30:55.855Z",
+      "pages": 13
+    },
+    "hush": {
+      "guide_html": "guides/hush.html",
+      "drive_file_id": "1XhxZQje2kZb6lg1GbKB2pJB1Mzkf8fVD",
+      "drive_title": "허쉬 조립도_1127 수정.pdf",
+      "last_modified": "2025-11-27T11:18:43Z",
+      "pages": 9
+    },
+    "mori-daybed": {
+      "guide_html": "guides/mori-daybed.html",
+      "drive_file_id": "14tYQf-N8bQmFTyFQkN6G05OWn2Sno9YU",
+      "drive_title": "모리 데이베드 시리즈_조립도 및 부품도26.3.4.pdf",
+      "last_modified": "2026-03-04T01:36:58Z",
+      "pages": 5
+    },
+    "mori-family": {
+      "guide_html": "guides/mori-family.html",
+      "drive_file_id": "1cOaOiWnAXBeJxF03MghDQASGaAr6yWzi",
+      "drive_title": "모리 패밀리침대_조립도 및 부품도.pdf",
+      "last_modified": "2026-05-19T06:55:18Z",
+      "pages": 13
+    },
+    "buddy-daybed": {
+      "guide_html": "guides/buddy-daybed.html",
+      "drive_file_id": "1464KzoxZFsnHvSVvkPxV5j1TIts_54u-",
+      "drive_title": "버디 데이베드 시리즈_조립도 및 부품도 26.03.13.pdf",
+      "last_modified": "2026-03-13T09:23:03Z",
+      "pages": 11
+    },
+    "buddy-babyjang": {
+      "guide_html": "guides/buddy-babyjang.html",
+      "drive_file_id": "1ALE-hNodNkWT8oYxDZ1rK-gooD4AC1V8",
+      "drive_title": "버디 베이비장 시리즈_조립도 및 부품도.pdf",
+      "last_modified": "2026-05-19T07:01:09Z",
+      "pages": 10
+    },
+    "buddy-gyogu": {
+      "guide_html": "guides/buddy-gyogu.html",
+      "drive_file_id": "1BL8OeZh0787WxaF0x721zbaeFAvPzTJn",
+      "drive_title": "버디 교구장 시리즈_조립도 및 부품도.pdf",
+      "last_modified": "2026-02-20T01:58:06Z",
+      "pages": 28
+    },
+    "lund-library": {
+      "guide_html": "guides/lund-library.html",
+      "drive_file_id": "1H5ASyzOUlhRes34tC7Yfr8lnssYJarkW",
+      "drive_title": "260130_룬드라이브러리_조립도.pdf",
+      "last_modified": "2026-02-12T08:22:19Z",
+      "pages": 32
+    },
+    "robin": {
+      "guide_html": "guides/robin.html",
+      "drive_file_id": "1-cWej-_ONDz2t1A7YAzM2-I9pnUVj9gA",
+      "drive_title": "로빈_조립도&부품도.pptx",
+      "last_modified": "2025-04-09T09:05:49.792Z",
+      "pages": null,
+      "note": "pptx — 단계 이미지 미생성"
+    },
+    "hadi": {
+      "guide_html": "guides/hadi.html",
+      "drive_file_id": "1wLZWzZU69ggz-UqR0jrp22jNe4PFMO6A",
+      "drive_title": "하디 발통 조립도.pdf",
+      "last_modified": "2024-09-19T04:48:58Z",
+      "pages": null,
+      "note": "다운로드 차단 (ineligible for AI contexts) — 단계 이미지 미생성"
+    },
+    "dear": {
+      "guide_html": "guides/dear.html",
+      "drive_file_id": null,
+      "drive_title": "디어 (PDF 없음 - 영상 중심)",
+      "last_modified": null,
+      "pages": null,
+      "note": "원본은 영상 + 이미지만"
+    },
+    "teen": {
+      "guide_html": "guides/teen.html",
+      "drive_file_id": null,
+      "drive_title": "틴 (이미지 9개 + 영상 11개)",
+      "last_modified": null,
+      "pages": null,
+      "note": "이미지 9컷"
+    },
+    "curve": {
+      "guide_html": "guides/curve.html",
+      "drive_file_id": null,
+      "drive_title": "커브 (영상 + 이미지)",
+      "last_modified": null,
+      "pages": null,
+      "note": "영상 중심"
+    },
+    "storage-bed": {
+      "guide_html": "guides/storage-bed.html",
+      "drive_file_id": "1cS518wqTorZyO_Zjba02p87liVsP1-pZ",
+      "drive_title": "수납침대,룬드 박스 패키징 설명.xlsx",
+      "last_modified": "2024-02-22T08:48:53.328Z",
+      "pages": null,
+      "note": "xlsx — 패키징표"
+    },
+    "imported-bed": {
+      "guide_html": "guides/imported-bed.html",
+      "drive_file_id": "16uwO5bkHqe31EI8Ih6UH7jTnvEroWK1v",
+      "drive_title": "수입 3종  구분.xlsx",
+      "last_modified": "2024-03-04T03:47:41.656Z",
+      "pages": null,
+      "note": "xlsx — 박스 구성표"
+    }
+  }
+}
