@@ -98,15 +98,7 @@
       "pages": null,
       "note": "pptx — 단계 이미지 미생성"
     },
-    "hadi": {
-      "guide_html": "guides/hadi.html",
-      "drive_file_id": "1wLZWzZU69ggz-UqR0jrp22jNe4PFMO6A",
-      "drive_title": "하디 발통 조립도.pdf",
-      "last_modified": "2024-09-19T04:48:58Z",
-      "pages": null,
-      "note": "다운로드 차단 (ineligible for AI contexts) — 단계 이미지 미생성"
-    },
-    "dear": {
+"dear": {
       "guide_html": "guides/dear.html",
       "drive_file_id": null,
       "drive_title": "디어 (PDF 없음 - 영상 중심)",
@@ -114,15 +106,7 @@
       "pages": null,
       "note": "원본은 영상 + 이미지만"
     },
-    "teen": {
-      "guide_html": "guides/teen.html",
-      "drive_file_id": null,
-      "drive_title": "틴 (이미지 9개 + 영상 11개)",
-      "last_modified": null,
-      "pages": null,
-      "note": "이미지 9컷"
-    },
-    "curve": {
+"curve": {
       "guide_html": "guides/curve.html",
       "drive_file_id": null,
       "drive_title": "커브 (영상 + 이미지)",
