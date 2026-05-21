@@ -114,15 +114,7 @@
       "pages": null,
       "note": "영상 중심"
     },
-    "storage-bed": {
-      "guide_html": "guides/storage-bed.html",
-      "drive_file_id": "1cS518wqTorZyO_Zjba02p87liVsP1-pZ",
-      "drive_title": "수납침대,룬드 박스 패키징 설명.xlsx",
-      "last_modified": "2024-02-22T08:48:53.328Z",
-      "pages": null,
-      "note": "xlsx — 패키징표"
-    },
-    "imported-bed": {
+"imported-bed": {
       "guide_html": "guides/imported-bed.html",
       "drive_file_id": "16uwO5bkHqe31EI8Ih6UH7jTnvEroWK1v",
       "drive_title": "수입 3종  구분.xlsx",
