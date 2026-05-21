@@ -354,8 +354,8 @@ img { max-width: 100%; display: block; }
   font-weight: 600;
   color: var(--accent-deep);
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   margin-bottom: 4px;
+  /* text-transform 미적용 — 입력된 그대로 표시 (nooer 소문자 보존) */
 }
 
 .card-title {
@@ -429,8 +429,8 @@ img { max-width: 100%; display: block; }
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: var(--accent-deep);
+  /* text-transform 미적용 — 입력된 그대로 (nooer 소문자 보존) */
   background: white;
   padding: 4px 12px;
   border-radius: 999px;
