@@ -3,3 +3,8 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Local PDF cache — large files, not needed in repo
+assets/pdf/
+_convert_pdfs.py
+_inject_step_images.py

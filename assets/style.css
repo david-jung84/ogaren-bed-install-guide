@@ -609,7 +609,108 @@ img { max-width: 100%; display: block; }
   font-weight: 700;
   font-size: 14px;
   letter-spacing: -0.02em;
+  z-index: 2;
 }
+
+/* Step illustration (PDF page extracted) */
+.step-img {
+  display: block;
+  width: 100%;
+  margin: 14px 0 4px;
+  border-radius: var(--r-md);
+  border: 1px solid var(--line-soft);
+  background: white;
+  cursor: zoom-in;
+  transition: transform .25s, box-shadow .25s;
+}
+.step-img:hover {
+  transform: scale(1.01);
+  box-shadow: var(--shadow-md);
+}
+
+/* Reference gallery — all PDF pages at bottom of guide */
+.ref-gallery {
+  margin: 40px 0 24px;
+}
+.ref-gallery h2 {
+  margin-bottom: 6px;
+}
+.ref-gallery-note {
+  color: var(--ink-mute);
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+.ref-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+.ref-grid figure {
+  margin: 0;
+  background: white;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  cursor: zoom-in;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.ref-grid figure:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+.ref-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ref-grid figcaption {
+  text-align: center;
+  font-size: 11px;
+  color: var(--ink-mute);
+  padding: 6px 4px;
+  font-family: var(--font-mono);
+  border-top: 1px solid var(--line-soft);
+  background: var(--bg-soft);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 16, 10, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  cursor: zoom-out;
+}
+.lightbox.show { display: flex; }
+.lightbox img {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: var(--r-md);
+  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+}
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border: none;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
 
 .step h4 {
   font-size: 17px;
