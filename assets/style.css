@@ -159,8 +159,13 @@ img { max-width: 100%; display: block; }
 .hero p {
   font-size: 17px;
   color: var(--ink-soft);
-  max-width: 580px;
+  max-width: 820px;
   margin: 0 auto 32px;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+@media (max-width: 880px) {
+  .hero p { white-space: normal; }
 }
 
 .hero-search {
