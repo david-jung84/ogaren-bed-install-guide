@@ -295,10 +295,33 @@ img { max-width: 100%; display: block; }
   overflow: hidden;
 }
 
+.card-thumb img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s cubic-bezier(.4,0,.2,1);
+}
+.card:hover .card-thumb img {
+  transform: scale(1.04);
+}
+
+/* Subtle vignette overlay for better tag readability */
+.card-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 70%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+}
+
 .card-thumb-glyph {
   font-size: 64px;
   opacity: 0.55;
   filter: grayscale(0.2);
+  position: relative;
+  z-index: 1;
 }
 
 .card-tag {
