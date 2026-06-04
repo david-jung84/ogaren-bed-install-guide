@@ -53,7 +53,9 @@
       "drive_file_id": "14tYQf-N8bQmFTyFQkN6G05OWn2Sno9YU",
       "drive_title": "모리 데이베드 시리즈_조립도 및 부품도26.3.4.pdf",
       "last_modified": "2026-03-04T01:36:58Z",
-      "pages": 5
+      "pages": 5,
+      "alternate_file_ids": ["199XoJ3ereL0LQxKcbbH9MW62JJyPGmyo"],
+      "alternate_note": "199XoJ3 = 같은 시리즈 구버전 13pp (모리 데이베드 시리즈_조립도 및 부품도 (1).pdf). 자동 routine이 신규로 잡지 않도록 등록."
     },
     "mori-family": {
       "guide_html": "guides/mori-family.html",

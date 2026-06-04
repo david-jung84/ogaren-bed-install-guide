@@ -66,11 +66,14 @@ def is_pdf(file):
 
 
 def find_match(file, tracked):
-    """기존 inventory에서 같은 file_id를 가진 항목 찾기."""
+    """기존 inventory에서 같은 file_id를 가진 항목 찾기.
+    primary drive_file_id뿐 아니라 alternate_file_ids(같은 시리즈 다른 버전)도 매칭."""
     fid = file.get("id")
     for slug, entry in tracked.items():
         if entry.get("drive_file_id") == fid:
             return slug, entry
+        if fid in (entry.get("alternate_file_ids") or []):
+            return slug, entry  # alternate 매칭 — 신규로 잡지 않음
     return None, None
 
 
