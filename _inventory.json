@@ -132,6 +132,16 @@
       "pages": null,
       "note": "영상 중심"
     },
+"odd": {
+      "guide_html": "guides/odd.html",
+      "drive_file_id": "1w2RjsnXvjJRnwLmRa59wK6PHnXuKh6F7",
+      "drive_title": "호텔셋업 모듈형_조립도.pdf",
+      "last_modified": "2026-07-06T02:14:21Z",
+      "pages": 19,
+      "note": "2026-07-24 신규 추가. ODD BED FRAME 모듈형. 부품도 별도 PDF: 1U-WJqRaFpOPp9vH6PthW3LAw3olvOrW4 (29pp)",
+      "alternate_file_ids": ["1U-WJqRaFpOPp9vH6PthW3LAw3olvOrW4"],
+      "alternate_note": "1U-WJqRa = 박스별 부품도 (29pp)"
+    },
 "imported-bed": {
       "guide_html": "guides/imported-bed.html",
       "drive_file_id": "16uwO5bkHqe31EI8Ih6UH7jTnvEroWK1v",
