@@ -103,10 +103,11 @@
     },
     "lund-library": {
       "guide_html": "guides/lund-library.html",
-      "drive_file_id": "1H5ASyzOUlhRes34tC7Yfr8lnssYJarkW",
-      "drive_title": "260130_룬드라이브러리_조립도.pdf",
-      "last_modified": "2026-02-12T08:22:19Z",
-      "pages": 32
+      "drive_file_id": "1pAwUbEFdQR9b5TKd1bKs-dm3KhWeipFW",
+      "drive_title": "룬드 라이브러리 시리즈_조립도 및 부품도.pdf",
+      "last_modified": "2026-07-30T00:50:52Z",
+      "pages": 40,
+      "note": "2026-07-30 진도→태경 이관 설계변경. 32pp→40pp. 파일 교체."
     },
     "robin": {
       "guide_html": "guides/robin.html",
