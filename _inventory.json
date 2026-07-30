@@ -107,7 +107,9 @@
       "drive_title": "룬드 라이브러리 시리즈_조립도 및 부품도.pdf",
       "last_modified": "2026-07-30T00:50:52Z",
       "pages": 40,
-      "note": "2026-07-30 진도→태경 이관 설계변경. 32pp→40pp. 파일 교체."
+      "note": "2026-07-30 진도→태경 이관 설계변경. 32pp→40pp. 파일 교체.",
+      "alternate_file_ids": ["18K4-EQUlRdHgzwfW6LcSFG95slry8Tz8"],
+      "alternate_note": "18K4-EQU = 구버전 (진도 공급) 32pp. 재고 소진까지 병행. 이미지: assets/img/steps/lund-library-jindo/"
     },
     "robin": {
       "guide_html": "guides/robin.html",
