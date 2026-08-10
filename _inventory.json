@@ -1,7 +1,7 @@
 {
   "_meta": {
     "drive_root": "1YSGhzk1HySn2T-f8LfWMp4lwayj0ajZa",
-    "last_check": "2026-08-03",
+    "last_check": "2026-08-10",
     "next_check_hint": "매주 월요일 09:00 KST",
     "note": "이 파일은 _weekly_check.py가 자동 업데이트합니다. 수동으로 슬러그 추가 시 'tracked'에 항목 추가."
   },
@@ -23,11 +23,11 @@
     },
     "hybrid-stable": {
       "guide_html": "guides/hybrid-stable.html",
-      "drive_file_id": "1CF9gELcnvFJ7xE--VNfRr3IDCPvCxS_U",
-      "drive_title": "하이브리드, 스테이블 ver2 조립설명서.pdf",
-      "last_modified": "2026-06-04T02:17:28Z",
+      "drive_file_id": "1erOEaRGhDwKA7AyCyCxym1-1Su7tsgB2",
+      "drive_title": "하이브리드, 스테이블 ver2 조립설명서_0805.pdf",
+      "last_modified": "2026-08-05T09:26:16.686Z",
       "pages": 9,
-      "note": "2026-06-04 신규 추가. 매트리스 + 토퍼 지퍼 결합형"
+      "note": "2026-06-04 신규 추가. 매트리스 + 토퍼 지퍼 결합형. 2026-08-05 파일 교체 (구: 1CF9gELcnvFJ7xE--VNfRr3IDCPvCxS_U)"
     },
     "lundvik": {
       "guide_html": "guides/lundvik.html",
@@ -105,7 +105,7 @@
       "guide_html": "guides/lund-library.html",
       "drive_file_id": "1pAwUbEFdQR9b5TKd1bKs-dm3KhWeipFW",
       "drive_title": "룬드 라이브러리 시리즈_조립도 및 부품도.pdf",
-      "last_modified": "2026-07-30T00:50:52Z",
+      "last_modified": "2026-07-30T00:50:52.031Z",
       "pages": 40,
       "note": "2026-07-30 진도→태경 이관 설계변경. 32pp→40pp. 파일 교체.",
       "alternate_file_ids": ["18K4-EQUlRdHgzwfW6LcSFG95slry8Tz8"],
@@ -139,7 +139,7 @@
       "guide_html": "guides/odd.html",
       "drive_file_id": "1w2RjsnXvjJRnwLmRa59wK6PHnXuKh6F7",
       "drive_title": "호텔셋업 모듈형_조립도.pdf",
-      "last_modified": "2026-07-06T02:14:21Z",
+      "last_modified": "2026-07-06T02:14:21.251Z",
       "pages": 19,
       "note": "2026-07-24 신규 추가. ODD BED FRAME 모듈형. 부품도 별도 PDF: 1U-WJqRaFpOPp9vH6PthW3LAw3olvOrW4 (29pp)",
       "alternate_file_ids": ["1U-WJqRaFpOPp9vH6PthW3LAw3olvOrW4"],
