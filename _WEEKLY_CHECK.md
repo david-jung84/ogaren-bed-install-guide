@@ -65,10 +65,15 @@ python _weekly_check.py --scan scan_result.json
 
 기존 file_id 그대로지만 `modifiedTime`이 바뀐 경우:
 
-1. 해당 PDF를 Drive MCP로 다시 다운로드
-2. `_convert_pdfs.py` 로직으로 페이지별 JPG 재생성 → `assets/img/steps/<slug>/`
-3. `_inject_step_images.py`로 HTML 재삽입
-4. `python _weekly_check.py --scan scan_result.json --apply` 로 inventory 갱신
+1. 해당 PDF를 Drive MCP로 다시 다운로드 (base64 → `.pdf`)
+2. `python _render_guide_pages.py <pdf> <slug> [--prefix assembly-|parts-]`
+   → `assets/img/steps/<slug>/page-NN.jpg` (여백 크롭 전체 페이지)
+   + 2단 페이지는 `page-NN-L.jpg` / `page-NN-R.jpg` 자동 생성 (고해상도, 대비 보정)
+   ※ 오드는 조립도 `--prefix assembly-`, 부품도 `--prefix parts-` 두 번 실행
+3. `python _inject_split_images.py guides/<slug>.html`
+   → step-img 가 가리키는 페이지에 L/R 이 있으면 두 장으로 교체 (멱등)
+4. 페이지 수가 바뀌면 `guides/<slug>.html` 갤러리(`.ref-grid`)와 "총 N 페이지" 문구 갱신
+5. `python _weekly_check.py --scan scan_result.json --apply` 로 inventory 갱신
 
 #### 🆕 새로 추가됨 (added) — 사람 검토 필요
 

@@ -66,7 +66,7 @@
   <li class="step">
     <h4>수납 파데 ① 마이다 + 측판 + 중간판</h4>
     <p>마이다 1개를 바닥에 두고, 측판 2 / 중간판 1을 미니픽스로 조립. 지판 2개를 홈에 끼움.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-sliding/page-03.jpg" alt="단계 1 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-03-L.jpg" alt="단계 1 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-03-R.jpg" alt="단계 1 도면 ②" loading="lazy"></div>
     <div class="callout warn">
       <div class="callout-title">⚠️ 측판 방향</div>
       <p style="margin:0;">측판은 <strong>미니픽스 하우징이 바깥쪽</strong>을 향하도록 조립.</p>
@@ -76,14 +76,14 @@
   <li class="step">
     <h4>수납 파데 ② 보강목 + 남은 마이다</h4>
     <p>보강목 2개를 미니픽스 + 목다보로 조립. 남은 마이다를 동일 방식으로 결합한 후 수납파데를 세움.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-sliding/page-04.jpg" alt="단계 2 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-04-L.jpg" alt="단계 2 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-04-R.jpg" alt="단계 2 도면 ②" loading="lazy"></div>
     <div class="step-sub">📍 중간 칸막이의 미니픽스 하우징에 <strong>마감 스티커</strong>를 부착.</div>
   </li>
 
   <li class="step">
     <h4>슬라이딩 파데 ① 측판 + 지판</h4>
     <p>지판에 측판을 미니픽스로 조립. <strong>헤드/풋보드 결합용 보링이 있는 판재는 양 끝에</strong> 배치.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05.jpg" alt="단계 3 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05-L.jpg" alt="단계 3 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05-R.jpg" alt="단계 3 도면 ②" loading="lazy"></div>
     <div class="step-parts">
       <span class="chip">측판(보링 없음) <b>3ea</b></span>
       <span class="chip">측판(보링 있음) <b>2ea</b></span>
@@ -93,7 +93,7 @@
   <li class="step">
     <h4>슬라이딩 파데 ② 뒷판 결합</h4>
     <p>뒷판(우라)을 지판에 미니픽스로 결합한 뒤, 측판에 스크류볼트로 고정.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05.jpg" alt="단계 4 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05-L.jpg" alt="단계 4 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-05-R.jpg" alt="단계 4 도면 ②" loading="lazy"></div>
     <div class="callout warn">
       <div class="callout-title">⚠️ 뒷판 방향</div>
       <p style="margin:0;">뒷판의 <strong>미니픽스 하우징이 뒤쪽을 향하도록</strong> 조립.</p>
@@ -118,7 +118,7 @@
   <li class="step">
     <h4>슬라이딩 파데 천판 + 수납 덮개</h4>
     <p>슬라이딩 파데의 천판 1ea을 미니픽스로 결합. 수납 파데의 덮개 2ea도 결합.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-sliding/page-07.jpg" alt="단계 6 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-07-L.jpg" alt="단계 6 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-sliding/page-07-R.jpg" alt="단계 6 도면 ②" loading="lazy"></div>
   </li>
 
   <li class="step">
@@ -171,17 +171,6 @@
 </div></footer>
 
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body></html>

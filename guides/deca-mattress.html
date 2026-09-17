@@ -194,18 +194,7 @@
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body>
 </html>

@@ -71,27 +71,27 @@
   <li class="step">
     <h4>칸막이 + 선반</h4>
     <p>칸막이와 선반을 <strong>더블 미니픽스 볼트 6 set</strong>으로 결합.</p>
-        <img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04.jpg" alt="단계 1 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-L.jpg" alt="단계 1 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-R.jpg" alt="단계 1 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>양 측판 결합</h4>
     <p>양 측판을 미니픽스 4 set으로 결합.</p>
-        <img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04.jpg" alt="단계 2 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-L.jpg" alt="단계 2 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-R.jpg" alt="단계 2 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>지판 + 뒷판</h4>
     <p>지판을 미니픽스 10 set으로 결합. 뒷판을 홈에 끼움.</p>
-        <img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04.jpg" alt="단계 3 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-L.jpg" alt="단계 3 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-04-R.jpg" alt="단계 3 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>천판 + 우라잡이</h4>
     <p>제품을 세우고 천판을 미니픽스 10 set으로 결합. 뒷판에 우라잡이 24ea를 고정.</p>
-        <img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05.jpg" alt="단계 4 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05-L.jpg" alt="단계 4 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05-R.jpg" alt="단계 4 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>발통 + 마감</h4>
     <p>뒷판과 선반을 스크류 8ea로 고정. PVC 발통 5ea을 스크류 10ea로 결합.</p>
-        <img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05.jpg" alt="단계 5 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05-L.jpg" alt="단계 5 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/buddy-gyogu/page-05-R.jpg" alt="단계 5 도면 ②" loading="lazy"></div>
   </li>
 </ol>
 
@@ -157,17 +157,6 @@
 </div></footer>
 
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body></html>

@@ -62,8 +62,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -239,6 +239,20 @@ img { max-width: 100%; display: block; }
   color: var(--ink-mute);
   font-size: 13px;
 }
+
+/* 신규 제품 강조 띠 (페이지 최상단) */
+.section-new {
+  padding: 26px 22px 30px;
+  margin-top: 8px;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, rgba(240,229,216,0) 100%);
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--accent-deep);
+  border-radius: var(--r-lg);
+}
+.section-new .section-head { border-bottom-color: rgba(139,111,79,0.25); flex-wrap: wrap; gap: 6px 16px; }
+.section-new .section-title { white-space: nowrap; }
+.section-new .section-title .badge { background: var(--accent-deep); color: white; }
+.topnav a.nav-new { color: var(--accent-deep); font-weight: 700; }
 
 /* ===== Series chip row ===== */
 .series-row {
@@ -538,7 +552,7 @@ img { max-width: 100%; display: block; }
 .toc ol {
   margin: 0;
   padding-left: 20px;
-  font-size: 14px;
+  font-size: 15px;
   columns: 2;
   column-gap: 30px;
 }
@@ -549,7 +563,7 @@ img { max-width: 100%; display: block; }
   width: 100%;
   border-collapse: collapse;
   margin: 12px 0 28px;
-  font-size: 14px;
+  font-size: 15px;
   background: var(--bg-card);
   border-radius: var(--r-md);
   overflow: hidden;
@@ -632,6 +646,13 @@ img { max-width: 100%; display: block; }
   transform: scale(1.01);
   box-shadow: var(--shadow-md);
 }
+/* 2단 도면을 좌/우로 나눠 세로로 쌓은 경우 */
+.step-img-pair {
+  display: grid;
+  gap: 10px;
+  margin: 14px 0 4px;
+}
+.step-img-pair .step-img { margin: 0; }
 
 /* Reference gallery — all PDF pages at bottom of guide */
 .ref-gallery {
@@ -642,7 +663,7 @@ img { max-width: 100%; display: block; }
 }
 .ref-gallery-note {
   color: var(--ink-mute);
-  font-size: 13px;
+  font-size: 14px;
   margin-bottom: 18px;
 }
 .ref-grid {
@@ -683,42 +704,69 @@ img { max-width: 100%; display: block; }
 .lightbox {
   position: fixed;
   inset: 0;
-  background: rgba(20, 16, 10, 0.85);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  z-index: 100;
+  background: rgba(20, 16, 10, 0.92);
+  z-index: 100000; /* DX 인증 배지(99999) 위 */
   display: none;
+}
+.lightbox.show { display: block; }
+.lightbox-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  overflow: hidden;
+  touch-action: none;
   cursor: zoom-out;
 }
-.lightbox.show { display: flex; }
-.lightbox img {
-  max-width: 95vw;
-  max-height: 90vh;
-  border-radius: var(--r-md);
-  box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+.lightbox-stage img {
+  max-width: 96vw;
+  max-height: 94vh;
+  background: white;
+  transform-origin: center center;
+  will-change: transform;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: zoom-in;
 }
+.lightbox.zoomed .lightbox-stage img { cursor: grab; }
 .lightbox-close {
   position: fixed;
-  top: 20px;
-  right: 24px;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
   color: white;
-  font-size: 32px;
+  font-size: 34px;
+  line-height: 1;
   cursor: pointer;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.14);
   border-radius: 50%;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   display: grid;
   place-items: center;
   border: none;
 }
-.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+.lightbox-close:hover { background: rgba(255,255,255,0.26); }
+.lightbox-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 28px;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.65);
+  color: white;
+  font-size: 14px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity .3s;
+  pointer-events: none;
+}
+.lightbox-hint.show { opacity: 1; }
 
 .step h4 {
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
   margin: 0 0 8px;
   letter-spacing: -0.01em;
@@ -726,6 +774,8 @@ img { max-width: 100%; display: block; }
 
 .step p {
   margin: 0 0 8px;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--ink-soft);
 }
 
@@ -734,7 +784,7 @@ img { max-width: 100%; display: block; }
   padding: 10px 14px;
   background: var(--bg-soft);
   border-radius: var(--r-sm);
-  font-size: 13px;
+  font-size: 15px;
   color: var(--ink-soft);
 }
 
@@ -743,7 +793,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   gap: 6px;
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--ink-mute);
   font-family: var(--font-mono);
   background: var(--bg-soft);
@@ -763,20 +813,21 @@ img { max-width: 100%; display: block; }
   gap: 5px;
   background: var(--bg-soft);
   border: 1px solid var(--line);
-  padding: 4px 10px;
+  padding: 5px 12px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--ink-soft);
 }
 .chip b { color: var(--accent-deep); font-family: var(--font-mono); }
 
 /* ===== Callout boxes ===== */
 .callout {
-  border-left: 3px solid;
+  border-left: 4px solid;
   padding: 14px 16px 14px 18px;
   border-radius: var(--r-sm);
   margin: 16px 0;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.6;
 }
 .callout-title {
   font-weight: 700;
@@ -830,17 +881,17 @@ img { max-width: 100%; display: block; }
 .check li {
   display: flex;
   align-items: flex-start;
-  gap: 10px;
-  padding: 7px 0;
-  font-size: 14px;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 16px;
   color: var(--ink-soft);
 }
 .check li::before {
   content: "";
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  margin-top: 4px;
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
   border: 1.5px solid var(--accent);
   border-radius: 4px;
   flex-shrink: 0;
@@ -873,7 +924,7 @@ img { max-width: 100%; display: block; }
 
 /* ===== Print ===== */
 @media print {
-  .topbar, .guide-actions, .footer { display: none; }
+  .topbar, .guide-actions, .footer, .lightbox, .dx-cert-badge { display: none; }
   body { background: white; }
   .step { break-inside: avoid; }
 }

@@ -87,14 +87,14 @@
   <li class="step">
     <h4>(헤드형) 브라켓 + 헤드보드</h4>
     <p>헤드를 결합하려는 상판을 세우고, 커넥팅 볼트/너트로 브라켓 2ea를 조립. 브라켓과 헤드보드를 커넥팅 볼트/너트로 결합.</p>
-        <img class="step-img" src="../assets/img/steps/lund/page-10.jpg" alt="단계 4 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lund/page-10-L.jpg" alt="단계 4 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lund/page-10-R.jpg" alt="단계 4 도면 ②" loading="lazy"></div>
     <div class="step-sub">📍 상판 A·B를 <strong>양면 미니픽스 볼트</strong>로 마감 조립.</div>
   </li>
 
   <li class="step">
     <h4>마감 스티커 부착</h4>
     <p>사용되지 않는 구멍에 스티커를 부착. 헤드형이 아닌 룬드 일반형·수납형도 동일하게 처리.</p>
-        <img class="step-img" src="../assets/img/steps/lund/page-12.jpg" alt="단계 5 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lund/page-12-L.jpg" alt="단계 5 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lund/page-12-R.jpg" alt="단계 5 도면 ②" loading="lazy"></div>
   </li>
 
   <li class="step">
@@ -134,17 +134,6 @@
 </div></footer>
 
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body></html>

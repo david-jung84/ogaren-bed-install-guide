@@ -97,13 +97,13 @@
       <li class="step">
         <h4>프레임 베이스 조립</h4>
         <p>프레임 베이스를 미니픽스 set으로 조립합니다.</p>
-        <img class="step-img" src="../assets/img/steps/hush/page-03.jpg" alt="단계 1 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/hush/page-03-L.jpg" alt="단계 1 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/hush/page-03-R.jpg" alt="단계 1 도면 ②" loading="lazy"></div>
       </li>
 
       <li class="step">
         <h4>풋보드 + 헤드보드 결합</h4>
         <p>프레임 베이스에 풋보드와 헤드보드를 미니픽스 + 목다보로 결합합니다.</p>
-        <img class="step-img" src="../assets/img/steps/hush/page-03.jpg" alt="단계 2 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/hush/page-03-L.jpg" alt="단계 2 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/hush/page-03-R.jpg" alt="단계 2 도면 ②" loading="lazy"></div>
         <div class="callout warn">
           <div class="callout-title">⚠️ 볼트 결합 방향</div>
           <ul style="margin:6px 0 0; padding-left:20px;">
@@ -121,7 +121,7 @@
       <li class="step">
         <h4>상판 결합</h4>
         <p>상판 2개를 베이스 프레임에 조립합니다.</p>
-        <img class="step-img" src="../assets/img/steps/hush/page-04.jpg" alt="단계 3 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/hush/page-04-L.jpg" alt="단계 3 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/hush/page-04-R.jpg" alt="단계 3 도면 ②" loading="lazy"></div>
         <div class="step-parts">
           <span class="chip">상판 <b>2ea</b></span>
         </div>
@@ -130,7 +130,7 @@
       <li class="step">
         <h4>쿠션 + 밀림방지 패드 + 코너캡 인계</h4>
         <p>쿠션 1ea와 밀림방지 패드를 부착한 후, 풋보드의 <strong>코너캡</strong>을 고객님께 전달.</p>
-        <img class="step-img" src="../assets/img/steps/hush/page-04.jpg" alt="단계 4 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/hush/page-04-L.jpg" alt="단계 4 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/hush/page-04-R.jpg" alt="단계 4 도면 ②" loading="lazy"></div>
         <div class="callout warn">
           <div class="callout-title">⚠️ 쿠션 이동 주의</div>
           <p style="margin:0;">쿠션을 <strong>끌어서 이동하면 안 됩니다</strong>. 하부 밀림방지 발통에 의해 오염 및 스크래치 발생.
@@ -141,7 +141,7 @@
       <li class="step">
         <h4>(옵션) 서랍 패널 — 서랍 + 백패널 + 핀 조명</h4>
         <p>서랍 내부에서 백 패널과 일반 볼트로 조립. 백 패널에 핀 조명을 M6 볼트로 설치.</p>
-        <img class="step-img" src="../assets/img/steps/hush/page-07.jpg" alt="단계 5 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/hush/page-07-L.jpg" alt="단계 5 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/hush/page-07-R.jpg" alt="단계 5 도면 ②" loading="lazy"></div>
       </li>
 
       <li class="step">
@@ -215,18 +215,7 @@
 </footer>
 
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body>
 </html>

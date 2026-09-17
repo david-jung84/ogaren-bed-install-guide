@@ -85,7 +85,7 @@
   <li class="step">
     <h4>(옵션) 센서 조명 설치</h4>
     <p>프레임 베이스 측면 유도보링에 조명 센서와 조명바를 조립합니다. <strong>상판 설치 전에 먼저 진행</strong>!</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-low/page-05.jpg" alt="단계 2 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-low/page-05-L.jpg" alt="단계 2 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-low/page-05-R.jpg" alt="단계 2 도면 ②" loading="lazy"></div>
     <div class="callout danger">
       <div class="callout-title">⛔ 순서 주의</div>
       <p style="margin:0;">상판을 먼저 설치하면 케이블 정리가 어렵습니다. <strong>반드시 센서 조명 → 상판 순</strong>.</p>
@@ -96,7 +96,7 @@
   <li class="step">
     <h4>상판 결합</h4>
     <p>프레임 베이스에 상판을 스크류볼트로 조립합니다. (SS = 14ea / QK·LK = 18ea)</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-low/page-05.jpg" alt="단계 3 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-low/page-05-L.jpg" alt="단계 3 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-low/page-05-R.jpg" alt="단계 3 도면 ②" loading="lazy"></div>
     <div class="step-parts">
       <span class="chip">상판 <b>2ea</b></span>
     </div>
@@ -125,17 +125,17 @@
   <li class="step">
     <h4>T선반 설치</h4>
     <p>패널에 T선반을 스크류볼트 3ea로 설치합니다.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-low/page-09.jpg" alt="단계 6 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-low/page-09-L.jpg" alt="단계 6 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-low/page-09-R.jpg" alt="단계 6 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>뒷판 분리 → 조명 설치</h4>
     <p>뒷판(우라)을 분리한 후 조명을 패널 뒷면에 설치합니다.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-low/page-09.jpg" alt="단계 7 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-low/page-09-L.jpg" alt="단계 7 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-low/page-09-R.jpg" alt="단계 7 도면 ②" loading="lazy"></div>
   </li>
   <li class="step">
     <h4>패널 + 헤드 연결</h4>
     <p>헤드와 패널의 뒷판을 모두 분리 → 연결칩 2ea로 조립 → 뒷판을 다시 조립.</p>
-        <img class="step-img" src="../assets/img/steps/lundvik-low/page-10.jpg" alt="단계 8 도면" loading="lazy">
+        <div class="step-img-pair"><img class="step-img" src="../assets/img/steps/lundvik-low/page-10-L.jpg" alt="단계 8 도면 ①" loading="lazy"><img class="step-img" src="../assets/img/steps/lundvik-low/page-10-R.jpg" alt="단계 8 도면 ②" loading="lazy"></div>
     <div class="callout info">
       <div class="callout-title">⚡ 조명 결선</div>
       <p style="margin:0;">LED 바 ─ 듀얼케이블 ─ <strong>USB 포트 + 터치 스위치</strong>. 다른 어댑터와 연결 시 작동 불가.</p>
@@ -168,17 +168,6 @@
 </div></footer>
 
 
-<div class="lightbox" id="lightbox" onclick="this.classList.remove('show')"><button class="lightbox-close" onclick="document.getElementById('lightbox').classList.remove('show')">×</button><img id="lightbox-img" src="" alt=""></div>
-<script>
-document.querySelectorAll(".step-img, .ref-grid figure img").forEach(img => {
-  img.addEventListener("click", e => {
-    e.preventDefault();
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").classList.add("show");
-  });
-});
-document.addEventListener("keydown", e => {
-  if (e.key === "Escape") document.getElementById("lightbox").classList.remove("show");
-});
-</script>
+<div class="lightbox" id="lightbox" role="dialog" aria-label="도면 확대"><button class="lightbox-close" type="button" aria-label="닫기">×</button><div class="lightbox-stage"><img id="lightbox-img" src="" alt="" draggable="false"></div><div class="lightbox-hint">두 번 탭 · 핀치로 확대 &nbsp;|&nbsp; 바깥 탭으로 닫기</div></div>
+<script src="../assets/lightbox.js" defer></script>
 </body></html>
