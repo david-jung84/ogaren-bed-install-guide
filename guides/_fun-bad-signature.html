@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>BAD 시그니처 안무 설치 가이드</title>
+<meta name="description" content="오가렌 설치가이드 서식을 빌린 비공식 유머물. 슬립퍼 시그니처 매트리스 위 8인 안무 시공 절차.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap">
+
+<style>
+:root {
+  --paper:#FAF8F5;
+  --card:#FFFFFF;
+  --soft:#F5F1EB;
+  --line:#E8E2D6;
+  --line-2:#F0EBE0;
+  --ink:#1A1A1A;
+  --ink-2:#4A4A4A;
+  --ink-3:#8B8B8B;
+  --mocha:#8B6F4F;
+  --beige:#C9A88B;
+  --beige-soft:#F0E5D8;
+
+  --stage:#5E3F97;
+  --stage-lit:#8B62D6;
+  --stage-soft:#EFE8FB;
+  --stage-line:#DCCDF5;
+
+  --warn-bg:#FFF8E7; --warn-bd:#F5D67A; --warn-ink:#8B5A00;
+  --danger-bg:#FCEEEE; --danger-bd:#E89898; --danger-ink:#A82626;
+  --info-bg:#EEF4FB; --info-bd:#9CBEE5; --info-ink:#2E5C92;
+  --good-bg:#EEF7EE; --good-bd:#95C295; --good-ink:#2E6B2E;
+
+  --sans:'IBM Plex Sans KR','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+  --mono:'IBM Plex Mono','D2Coding',ui-monospace,Consolas,monospace;
+  --display:'Black Han Sans','IBM Plex Sans KR',sans-serif;
+
+  --r-sm:6px; --r-md:12px; --r-lg:18px;
+  --shadow:0 4px 16px rgba(60,40,20,.06);
+  --shadow-lg:0 14px 40px rgba(60,40,20,.10);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:#15121B; --card:#1D1926; --soft:#241F30; --line:#332B42; --line-2:#2A2436;
+    --ink:#F2EEF7; --ink-2:#C5BCD3; --ink-3:#8B819B;
+    --mocha:#D3B694; --beige:#DEC5A8; --beige-soft:#2E2739;
+    --stage:#B79BE8; --stage-lit:#C9B2F2; --stage-soft:#262033; --stage-line:#453961;
+    --warn-bg:#2E2718; --warn-bd:#6E5A22; --warn-ink:#E8C978;
+    --danger-bg:#2E1C1C; --danger-bd:#6E3434; --danger-ink:#EFA0A0;
+    --info-bg:#1A2231; --info-bd:#33507A; --info-ink:#A3C4EC;
+    --good-bg:#1A2620; --good-bd:#33613F; --good-ink:#9DCFA6;
+    --shadow:0 4px 16px rgba(0,0,0,.35);
+    --shadow-lg:0 14px 40px rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"] {
+  --paper:#15121B; --card:#1D1926; --soft:#241F30; --line:#332B42; --line-2:#2A2436;
+  --ink:#F2EEF7; --ink-2:#C5BCD3; --ink-3:#8B819B;
+  --mocha:#D3B694; --beige:#DEC5A8; --beige-soft:#2E2739;
+  --stage:#B79BE8; --stage-lit:#C9B2F2; --stage-soft:#262033; --stage-line:#453961;
+  --warn-bg:#2E2718; --warn-bd:#6E5A22; --warn-ink:#E8C978;
+  --danger-bg:#2E1C1C; --danger-bd:#6E3434; --danger-ink:#EFA0A0;
+  --info-bg:#1A2231; --info-bd:#33507A; --info-ink:#A3C4EC;
+  --good-bg:#1A2620; --good-bd:#33613F; --good-ink:#9DCFA6;
+  --shadow:0 4px 16px rgba(0,0,0,.35);
+  --shadow-lg:0 14px 40px rgba(0,0,0,.5);
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap { width:min(1120px, 100% - 40px); margin-inline:auto; }
+.narrow { width:min(720px, 100% - 40px); margin-inline:auto; }
+
+/* ---------- top bar ---------- */
+.topbar {
+  border-bottom:1px solid var(--line);
+  background:var(--card);
+  position:sticky; top:0; z-index:40;
+}
+.topbar-inner { display:flex; align-items:center; justify-content:space-between; gap:16px; height:58px; }
+.brand { display:flex; align-items:center; gap:10px; font-weight:600; font-size:14px; color:var(--ink); text-decoration:none; }
+.brand-mark {
+  width:26px; height:26px; border-radius:8px; display:grid; place-items:center;
+  background:var(--mocha); color:#fff; font-weight:700; font-size:13px; flex:none;
+}
+.stamp {
+  display:inline-flex; align-items:center; gap:7px;
+  background:var(--stage-soft); color:var(--stage);
+  border:1px solid var(--stage-line);
+  padding:5px 11px; border-radius:20px;
+  font-size:11.5px; font-weight:600; letter-spacing:.02em; white-space:nowrap;
+}
+.stamp .dot { width:7px; height:7px; border-radius:50%; background:var(--stage-lit); flex:none; }
+.stamp .meta { font-weight:400; opacity:.8; font-family:var(--mono); font-size:10.5px; }
+
+/* ---------- hero: 합성 작업창 ---------- */
+.comp {
+  background:#0E0B15;
+  border-bottom:1px solid var(--line);
+  padding:34px 0 40px;
+  position:relative;
+  overflow:hidden;
+}
+.comp::before {
+  content:""; position:absolute; inset:-30% -10% auto -10%; height:120%;
+  background:
+    radial-gradient(60% 55% at 22% 6%, rgba(160,110,240,.42), transparent 62%),
+    radial-gradient(55% 50% at 80% 0%, rgba(96,196,232,.20), transparent 60%),
+    radial-gradient(70% 60% at 50% 100%, rgba(120,72,190,.28), transparent 65%);
+  pointer-events:none;
+}
+.comp-inner { position:relative; z-index:1; }
+
+.comp-bar {
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  flex-wrap:wrap;
+  font-family:var(--mono); font-size:11px; letter-spacing:.04em;
+  color:rgba(226,216,244,.62);
+  border-bottom:1px solid rgba(180,150,235,.20);
+  padding-bottom:12px; margin-bottom:22px;
+}
+.comp-bar b { color:#E8DEFA; font-weight:600; }
+
+.comp-grid { display:grid; grid-template-columns:212px minmax(0,1fr); gap:26px; align-items:start; }
+@media (max-width:820px) { .comp-grid { grid-template-columns:1fr; gap:20px; } }
+
+.layers { display:flex; flex-direction:column; gap:7px; }
+.layers-h {
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:rgba(226,216,244,.5); margin-bottom:3px;
+}
+.layer {
+  display:flex; align-items:baseline; gap:10px;
+  padding:9px 11px; border-radius:9px;
+  border:1px solid rgba(180,150,235,.18);
+  background:rgba(255,255,255,.035);
+  font-size:12.5px; color:rgba(232,224,246,.86); line-height:1.45;
+}
+.layer .n { font-family:var(--mono); font-size:10.5px; color:rgba(200,175,245,.65); flex:none; }
+.layer .sub { display:block; font-size:10.5px; color:rgba(226,216,244,.45); font-family:var(--mono); }
+.layer.missing {
+  border-color:rgba(240,170,120,.5);
+  background:rgba(240,170,120,.09);
+  color:#F6D3B2;
+}
+.layer.missing .n, .layer.missing .sub { color:rgba(246,211,178,.72); }
+
+.canvas {
+  position:relative;
+  border:1px solid rgba(180,150,235,.26);
+  border-radius:14px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,0)),
+    #120E1C;
+  padding:30px 26px 22px;
+  overflow:hidden;
+}
+.canvas::after {
+  content:""; position:absolute; left:50%; top:-8%; width:52%; height:80%;
+  transform:translateX(-50%) perspective(500px) rotateX(6deg);
+  background:linear-gradient(180deg, rgba(190,150,255,.20), transparent 78%);
+  filter:blur(22px); pointer-events:none;
+}
+.canvas > * { position:relative; z-index:1; }
+
+.eyebrow {
+  font-family:var(--mono); font-size:11px; letter-spacing:.18em; text-transform:uppercase;
+  color:#C4A6F5; margin:0 0 10px;
+}
+.comp h1 {
+  font-family:var(--display); font-weight:400;
+  font-size:clamp(30px, 6.2vw, 52px); line-height:1.08; letter-spacing:-.01em;
+  margin:0 0 14px; color:#FBF8FF; text-wrap:balance;
+}
+.comp h1 em { font-style:normal; color:#C9A6FF; }
+.comp .lede {
+  margin:0 0 22px; max-width:52ch;
+  font-size:14.5px; line-height:1.75; color:rgba(228,220,244,.74);
+}
+.comp .lede strong { color:#F3ECFF; font-weight:600; }
+
+.plates { display:grid; grid-template-columns:1.15fr .85fr; gap:16px; align-items:stretch; }
+@media (max-width:640px) { .plates { grid-template-columns:1fr; } }
+
+.plate { position:relative; border-radius:10px; overflow:hidden; }
+.plate img { display:block; width:100%; height:100%; object-fit:cover; }
+.plate .tint {
+  position:absolute; inset:0;
+  background:linear-gradient(200deg, rgba(150,90,240,.55), rgba(40,20,80,.35) 60%, rgba(90,180,230,.30));
+  mix-blend-mode:color;
+}
+.plate .glow {
+  position:absolute; inset:0;
+  background:radial-gradient(70% 55% at 30% 0%, rgba(255,255,255,.28), transparent 60%);
+  mix-blend-mode:screen;
+}
+.plate .tag {
+  position:absolute; left:9px; bottom:9px; z-index:2;
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.08em;
+  background:rgba(12,8,20,.72); color:#DFCFFB;
+  border:1px solid rgba(190,160,245,.3);
+  padding:3px 7px; border-radius:5px;
+}
+
+.slot {
+  border:2px dashed rgba(200,168,250,.52);
+  border-radius:10px;
+  background:
+    repeating-linear-gradient(135deg, rgba(255,255,255,.030) 0 9px, transparent 9px 18px),
+    rgba(150,110,220,.07);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px;
+  padding:26px 16px; min-height:180px; text-align:center;
+}
+.slot .icon { font-size:22px; line-height:1; opacity:.9; }
+.slot .t { font-size:13px; font-weight:600; color:#E9DEFF; }
+.slot .d { font-family:var(--mono); font-size:10.5px; color:rgba(220,206,246,.6); line-height:1.6; }
+
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin-top:20px; }
+.chip {
+  font-size:12px; padding:6px 11px; border-radius:8px;
+  border:1px solid rgba(185,155,240,.26);
+  background:rgba(255,255,255,.045); color:rgba(232,224,248,.86);
+}
+.chip b { font-family:var(--mono); font-weight:600; color:#F0E7FF; }
+.chip.over { border-color:rgba(240,170,120,.48); background:rgba(240,170,120,.10); color:#F7D6B6; }
+.chip.over b { color:#FFE3C6; }
+
+/* ---------- document ---------- */
+main { padding:46px 0 20px; }
+
+h2 {
+  font-size:20px; font-weight:700; letter-spacing:-.01em;
+  margin:46px 0 12px; padding-bottom:9px;
+  border-bottom:1px solid var(--line);
+  text-wrap:balance;
+}
+h2:first-child { margin-top:0; }
+h2 .num {
+  font-family:var(--mono); font-size:12px; font-weight:600;
+  color:var(--stage); margin-right:9px;
+}
+p { margin:0 0 14px; color:var(--ink-2); }
+p strong { color:var(--ink); font-weight:600; }
+
+.toc {
+  background:var(--soft); border:1px solid var(--line);
+  border-radius:var(--r-md); padding:16px 20px; margin-bottom:8px;
+}
+.toc-title {
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); margin-bottom:8px;
+}
+.toc ol { margin:0; padding-left:20px; color:var(--ink-2); font-size:14px; }
+.toc li { margin:3px 0; }
+.toc a { color:var(--ink-2); text-decoration:none; border-bottom:1px solid transparent; }
+.toc a:hover, .toc a:focus-visible { color:var(--stage); border-bottom-color:var(--stage-line); }
+
+.callout {
+  border:1px solid var(--line); border-left-width:3px;
+  border-radius:var(--r-sm); padding:13px 16px; margin:0 0 12px;
+  background:var(--card); font-size:14.5px;
+}
+.callout p:last-child, .callout ul:last-child { margin-bottom:0; }
+.callout-title { font-weight:700; font-size:13.5px; margin-bottom:5px; }
+.callout ul { margin:6px 0 0; padding-left:19px; color:inherit; }
+.callout li { margin:3px 0; }
+.callout.danger { background:var(--danger-bg); border-color:var(--danger-bd); color:var(--danger-ink); }
+.callout.warn   { background:var(--warn-bg);   border-color:var(--warn-bd);   color:var(--warn-ink); }
+.callout.info   { background:var(--info-bg);   border-color:var(--info-bd);   color:var(--info-ink); }
+.callout.tip    { background:var(--good-bg);   border-color:var(--good-bd);   color:var(--good-ink); }
+.callout.danger p, .callout.warn p, .callout.info p, .callout.tip p { color:inherit; }
+
+.variants { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:0 0 14px; }
+.variant {
+  border:1px solid var(--line); border-radius:var(--r-sm);
+  background:var(--card); padding:13px 15px;
+}
+.variant-name { font-weight:700; font-size:14px; margin-bottom:3px; }
+.variant-meta { font-size:12.5px; color:var(--ink-3); font-family:var(--mono); line-height:1.6; }
+
+/* ---------- 동선도 ---------- */
+.plan-card {
+  border:1px solid var(--line); border-radius:var(--r-md);
+  background:var(--card); padding:22px; margin:0 0 14px;
+  box-shadow:var(--shadow);
+}
+.plan-head {
+  display:flex; align-items:baseline; justify-content:space-between; gap:12px;
+  flex-wrap:wrap; margin-bottom:16px;
+}
+.plan-head .t { font-weight:700; font-size:14px; }
+.plan-head .d { font-family:var(--mono); font-size:11px; color:var(--ink-3); letter-spacing:.03em; }
+
+.plan-stage { display:grid; grid-template-columns:26px minmax(0,1fr); gap:10px; align-items:stretch; }
+.plan-ylab {
+  writing-mode:vertical-rl; transform:rotate(180deg);
+  display:grid; place-items:center;
+  font-family:var(--mono); font-size:10.5px; color:var(--ink-3); letter-spacing:.08em;
+  border-left:1px solid var(--line); border-right:1px solid var(--line);
+}
+.bed {
+  position:relative;
+  aspect-ratio:1500/2000;
+  max-height:400px; margin-inline:auto; width:100%;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:
+    repeating-linear-gradient(90deg, var(--line-2) 0 1px, transparent 1px 25%),
+    repeating-linear-gradient(0deg, var(--line-2) 0 1px, transparent 1px 50%),
+    linear-gradient(180deg, var(--soft), var(--card));
+  display:grid; grid-template-columns:repeat(4,1fr); grid-template-rows:repeat(2,1fr);
+  padding:5px; gap:4px;
+}
+.bed .head-lab, .bed .foot-lab {
+  position:absolute; left:50%; transform:translateX(-50%);
+  font-family:var(--mono); font-size:9.5px; letter-spacing:.14em;
+  color:var(--ink-3); background:var(--card); padding:1px 8px;
+}
+.bed .head-lab { top:-9px; }
+.bed .foot-lab { bottom:-9px; }
+.pos {
+  border-radius:8px;
+  background:var(--stage-soft);
+  border:1px solid var(--stage-line);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px;
+  min-width:0;
+}
+.pos .i { font-family:var(--mono); font-size:13px; font-weight:600; color:var(--stage); }
+.pos .w { font-family:var(--mono); font-size:8.5px; color:var(--ink-3); }
+.pos.center { background:var(--beige-soft); border-color:var(--beige); }
+.pos.center .i { color:var(--mocha); }
+
+.plan-notes { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:16px; }
+.note { border-top:2px solid var(--line); padding-top:8px; }
+.note .k { font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3); }
+.note .v { font-size:14px; font-weight:600; font-variant-numeric:tabular-nums; margin-top:1px; }
+.note.alert { border-top-color:var(--danger-bd); }
+.note.alert .v { color:var(--danger-ink); }
+
+/* ---------- steps ---------- */
+.steps { list-style:none; counter-reset:s; margin:0; padding:0; display:flex; flex-direction:column; gap:14px; }
+.step {
+  counter-increment:s;
+  position:relative;
+  border:1px solid var(--line); border-radius:var(--r-md);
+  background:var(--card); padding:20px 22px 20px 60px;
+  box-shadow:var(--shadow);
+}
+.step::before {
+  content:counter(s,decimal-leading-zero);
+  position:absolute; left:20px; top:19px;
+  font-family:var(--mono); font-size:14px; font-weight:600;
+  color:var(--stage);
+}
+.step h4 { margin:0 0 6px; font-size:16px; font-weight:700; letter-spacing:-.005em; }
+.step p { margin:0 0 10px; font-size:14.5px; }
+.step p:last-child { margin-bottom:0; }
+.step-sub {
+  font-size:13px; color:var(--ink-2);
+  background:var(--soft); border-radius:var(--r-sm);
+  padding:9px 12px; margin-top:10px;
+}
+.step-sub strong { color:var(--ink); }
+.step-parts { display:flex; flex-wrap:wrap; gap:7px; margin-top:11px; }
+.pchip {
+  font-family:var(--mono); font-size:11px;
+  border:1px solid var(--line); border-radius:20px;
+  padding:3px 11px; color:var(--ink-2); background:var(--soft);
+}
+.pchip b { color:var(--stage); }
+.step .callout { margin-top:11px; margin-bottom:0; }
+
+.cue {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--mono); font-size:10.5px; letter-spacing:.06em;
+  color:var(--stage); background:var(--stage-soft);
+  border:1px solid var(--stage-line); border-radius:5px;
+  padding:2px 8px; margin-bottom:9px;
+}
+
+/* ---------- checklist ---------- */
+.check {
+  border:1px solid var(--line); border-radius:var(--r-md);
+  background:var(--soft); padding:20px 24px; margin-top:26px;
+}
+.check h4 { margin:0 0 12px; font-size:15px; font-weight:700; }
+.check ul { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+.check li {
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:14.5px; color:var(--ink-2);
+  padding-bottom:8px; border-bottom:1px solid var(--line-2);
+}
+.check li:last-child { border-bottom:0; padding-bottom:0; }
+.check li::before {
+  content:""; flex:none; width:15px; height:15px; margin-top:5px;
+  border:1.5px solid var(--beige); border-radius:4px; background:var(--card);
+}
+
+/* ---------- footer ---------- */
+.footer {
+  margin-top:52px; border-top:1px solid var(--line);
+  background:var(--card); padding:26px 0 34px;
+}
+.footer-inner { display:flex; flex-direction:column; gap:10px; }
+.footer .row { display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--ink-3); }
+.disclaimer {
+  font-size:12px; line-height:1.7; color:var(--ink-3);
+  border-left:2px solid var(--line); padding-left:12px; max-width:66ch;
+}
+.disclaimer strong { color:var(--ink-2); font-weight:600; }
+
+:focus-visible { outline:2px solid var(--stage-lit); outline-offset:2px; border-radius:3px; }
+@media (prefers-reduced-motion: reduce) { * { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="#top">
+      <span class="brand-mark">O</span>
+      <span>침대 프레임 / 매트리스 설치 가이드</span>
+    </a>
+    <span class="stamp">
+      <span class="dot"></span> 안무 미인증
+      <span class="meta">v0.1 · 비공식</span>
+    </span>
+  </div>
+</header>
+
+<section class="comp" id="top">
+  <div class="wrap comp-inner">
+
+    <div class="comp-bar">
+      <span>합성 미리보기 &nbsp;·&nbsp; <b>1080 × 1080</b> &nbsp;·&nbsp; sRGB</span>
+      <span>레이어 <b>3 / 4</b> 배치 완료</span>
+    </div>
+
+    <div class="comp-grid">
+
+      <aside class="layers">
+        <div class="layers-h">Layers</div>
+        <div class="layer">
+          <span class="n">04</span>
+          <span>무대 조명<span class="sub">보라 워시 + 헤이즈</span></span>
+        </div>
+        <div class="layer missing">
+          <span class="n">03</span>
+          <span>ATEEZ 무대 컷<span class="sub">비어 있음 — 원본 필요</span></span>
+        </div>
+        <div class="layer">
+          <span class="n">02</span>
+          <span>시그니처 매트리스<span class="sub">QK · 토퍼 결합 상태</span></span>
+        </div>
+        <div class="layer">
+          <span class="n">01</span>
+          <span>배경<span class="sub">스튜디오 베이지</span></span>
+        </div>
+      </aside>
+
+      <div class="canvas">
+        <p class="eyebrow">Sleeper · Signature × 'BAD'</p>
+        <h1>시그니처 매트리스<br>위에서 추는 <em>BAD 시그니처</em></h1>
+        <p class="lede">
+          슬립퍼 시그니처(QK) 위에서 8인 포인트 안무를 시공할 때의 절차입니다.
+          매트리스와 토퍼는 <strong>전체가 화이트</strong>이므로, 안무보다 오염 방지 단계가 우선입니다.
+        </p>
+
+        <div class="plates">
+          <div class="plate">
+            <img src="../assets/img/signature.jpg" alt="슬립퍼 시그니처 매트리스 — 무대 조명 적용">
+            <span class="tint"></span>
+            <span class="glow"></span>
+            <span class="tag">02 · 시그니처 매트리스</span>
+          </div>
+          <div class="slot">
+            <span class="icon">🕺</span>
+            <span class="t">무대 컷 배치 영역</span>
+            <span class="d">03 레이어 · 인물 누끼<br>여기에 원본 사진을 얹으면 완성</span>
+          </div>
+        </div>
+
+        <div class="chips">
+          <span class="chip">📋 <b>5</b> 단계</span>
+          <span class="chip">⏱ 소요 <b>3분 12초</b></span>
+          <span class="chip over">👥 인원 <b>8인</b> (권장 2인 초과)</span>
+          <span class="chip">🎤 공구 없음 · 인이어 <b>8</b></span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<main>
+  <div class="narrow">
+
+    <nav class="toc" aria-label="목차">
+      <div class="toc-title">목차</div>
+      <ol>
+        <li><a href="#caution">시공 전 주의사항</a></li>
+        <li><a href="#orientation">방향 확인 (헤드 / 풋)</a></li>
+        <li><a href="#plan">8인 동선도</a></li>
+        <li><a href="#steps">안무 시공 단계</a></li>
+        <li><a href="#final">최종 인수 체크리스트</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="caution"><span class="num">01</span>시공 전 주의사항</h2>
+    <p>
+      원본 가이드의 금지 항목은 안무 중에도 그대로 적용됩니다. 무대는 다시 찍을 수 있지만
+      화이트 원단은 한 번 오염되면 복구가 어렵습니다.
+    </p>
+
+    <div class="callout danger">
+      <div class="callout-title">⛔ 절대 금지</div>
+      <p>
+        포인트 동작에서 <strong>매트리스 측면 손잡이를 잡지 마십시오.</strong>
+        손잡이는 운반용이 아니며, 체중이 실리면 봉제선과 내부 구조가 손상됩니다.
+        착지 지지가 필요하면 프레임 상단 모서리를 짚습니다.
+      </p>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-title">⚠️ 오염 방지 필수</div>
+      <ul>
+        <li>무대 메이크업 · 헤어 왁스 · 땀은 화이트 원단에서 <strong>복구 불가</strong></li>
+        <li>장갑 착용은 안무 동선상 불가하므로, <strong>시트를 먼저 씌운 뒤</strong> 진행</li>
+        <li>신발은 실내용 클린 솔만 허용. 무대화 그대로 올라가지 않습니다</li>
+        <li>바닥 비닐은 촬영 종료 후 마지막에 제거</li>
+      </ul>
+    </div>
+
+    <div class="callout info">
+      <div class="callout-title">💡 하중 안내</div>
+      <p>
+        성인 8인 동시 탑승은 약 <strong>560kg</strong>으로, 스프링 보증 범위(정하중 기준)를 벗어납니다.
+        <strong>4인 2교대</strong>로 나누면 보증 범위 안에서 같은 그림이 나옵니다.
+      </p>
+    </div>
+
+    <h2 id="orientation"><span class="num">02</span>방향 확인 (헤드 / 풋)</h2>
+    <p>
+      매트리스와 토퍼의 헤드/풋을 잘못 두면 연결고리가 어긋나고, 카메라에는 로고가 뒤집혀 잡힙니다.
+    </p>
+
+    <div class="variants">
+      <div class="variant">
+        <div class="variant-name">매트리스</div>
+        <div class="variant-meta">금속 메달 = 풋(FOOT)<br>→ 카메라 정면</div>
+      </div>
+      <div class="variant">
+        <div class="variant-name">토퍼</div>
+        <div class="variant-meta">케어·브랜드 라벨 = 헤드(HEAD)<br>→ 무대 뒤편</div>
+      </div>
+    </div>
+
+    <div class="callout tip">
+      <div class="callout-title">✓ 한 번에 확인하기</div>
+      <p>
+        금속 메달과 토퍼 라벨이 <strong>서로 반대편</strong>에 오도록 두면 헤드/풋이 자동으로 맞고,
+        정면 컷에서 메달이 로고 위치로 잡힙니다.
+      </p>
+    </div>
+
+    <h2 id="plan"><span class="num">03</span>8인 동선도</h2>
+    <p>
+      퀸(QK) 1인용 유효 면적을 8등분한 배치입니다. 실측 결과 <strong>2열 4행 대형이 물리적 한계</strong>입니다.
+    </p>
+
+    <div class="plan-card">
+      <div class="plan-head">
+        <span class="t">QK 상면도 · 8인 배치</span>
+        <span class="d">1500 × 2000 mm</span>
+      </div>
+
+      <div class="plan-stage">
+        <div class="plan-ylab">2000 mm</div>
+        <div class="bed">
+          <span class="head-lab">HEAD · 무대 뒤</span>
+          <span class="foot-lab">FOOT · 카메라</span>
+          <div class="pos"><span class="i">1</span><span class="w">375</span></div>
+          <div class="pos"><span class="i">2</span><span class="w">375</span></div>
+          <div class="pos"><span class="i">3</span><span class="w">375</span></div>
+          <div class="pos"><span class="i">4</span><span class="w">375</span></div>
+          <div class="pos"><span class="i">5</span><span class="w">375</span></div>
+          <div class="pos center"><span class="i">6</span><span class="w">센터</span></div>
+          <div class="pos center"><span class="i">7</span><span class="w">센터</span></div>
+          <div class="pos"><span class="i">8</span><span class="w">375</span></div>
+        </div>
+      </div>
+
+      <div class="plan-notes">
+        <div class="note">
+          <div class="k">유효 면적</div>
+          <div class="v">3.00 ㎡</div>
+        </div>
+        <div class="note">
+          <div class="k">1인 점유</div>
+          <div class="v">375 × 1000 mm</div>
+        </div>
+        <div class="note alert">
+          <div class="k">어깨너비 대비</div>
+          <div class="v">75 mm 중첩</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="callout-title">⚠️ 팔 벌림 반경 미확보</div>
+      <p>
+        성인 어깨너비 약 450mm에 대해 1인 폭이 375mm로, 좌우 <strong>75mm가 겹칩니다.</strong>
+        팔을 옆으로 뻗는 동작은 대형 유지가 불가하므로, 매트리스 위 구간은
+        <strong>상체 중심 동작</strong>으로 대체합니다.
+      </p>
+    </div>
+
+    <h2 id="steps"><span class="num">04</span>안무 시공 단계</h2>
+
+    <ol class="steps">
+
+      <li class="step">
+        <h4>매트리스 정위치</h4>
+        <span class="cue">CUE 00:00</span>
+        <p>
+          비닐 전면·측면을 개봉하고 매트리스를 프레임 위 정위치에 올립니다.
+          이 단계 이후로는 매트리스를 밀어서 이동시키지 않습니다.
+        </p>
+        <div class="step-sub">📍 금속 메달이 <strong>풋 방향(카메라)</strong>에 오도록 정렬</div>
+      </li>
+
+      <li class="step">
+        <h4>토퍼 전개</h4>
+        <span class="cue">CUE 00:08</span>
+        <p>
+          토퍼는 박스 안에 말려 있습니다. 꺼내서 비닐을 풀고 매트리스 위에 펼칩니다.
+          인트로 8초 안에 끝나야 하므로 2인이 양 끝을 동시에 잡습니다.
+        </p>
+        <div class="step-sub">📍 케어·브랜드 라벨이 <strong>헤드 방향</strong>에 오도록 정렬. 토퍼를 바닥에 내려놓지 말 것</div>
+      </li>
+
+      <li class="step">
+        <h4>연결고리 4점 해제 후 재잠금</h4>
+        <span class="cue">CUE 00:22</span>
+        <p>
+          네 모서리(상단 좌·우 / 하단 좌·우) 연결고리를 풀어 토퍼 고리와 비너로 다시 잠급니다.
+          <strong>안무 시작 전 4점 전부 잠금 확인</strong>은 필수입니다.
+        </p>
+        <div class="step-parts">
+          <span class="pchip">상단 좌 <b>1</b></span>
+          <span class="pchip">상단 우 <b>1</b></span>
+          <span class="pchip">하단 좌 <b>1</b></span>
+          <span class="pchip">하단 우 <b>1</b></span>
+        </div>
+        <div class="callout warn">
+          <div class="callout-title">⚠️ 한 점이라도 열려 있으면</div>
+          <p>첫 동작에서 토퍼가 통째로 밀립니다. 고리를 무리하게 당기면 봉제선이 뜯어지니 천천히.</p>
+        </div>
+      </li>
+
+      <li class="step">
+        <h4>8인 대형 진입</h4>
+        <span class="cue">CUE 01:04</span>
+        <p>
+          네 모서리 → 센터 순으로 올라갑니다. <strong>동시 착지 금지</strong>,
+          0.5초 간격 순차 착지로 순간 하중을 분산합니다.
+        </p>
+        <div class="step-sub">📍 센터 2인(6·7번)은 토퍼 중앙 봉제선을 밟지 않도록 좌우로 반보씩 벌립니다</div>
+      </li>
+
+      <li class="step">
+        <h4>마무리 확인</h4>
+        <span class="cue">CUE 03:12</span>
+        <p>
+          안무 종료 후 토퍼를 가볍게 당겨 4점 결합을 재확인하고, 표면 눌림과 오염을 점검합니다.
+        </p>
+        <div class="callout tip">
+          <div class="callout-title">✓ 눌림 자국</div>
+          <p>표면 눌림은 하중 제거 후 <strong>4~6시간</strong>이면 자연 복원됩니다. 다림질·드라이어 금지.</p>
+        </div>
+      </li>
+
+    </ol>
+
+    <h2 id="final"><span class="num">05</span>최종 인수 체크리스트</h2>
+
+    <div class="check">
+      <h4>촬영 종료 후 확인</h4>
+      <ul>
+        <li>매트리스 측면 손잡이 손상 없음</li>
+        <li>토퍼 4점 비너 모두 잠김</li>
+        <li>화이트 원단 오염 · 스크래치 없음</li>
+        <li>눌림 자국 복원 확인 (4~6시간 후 재점검)</li>
+        <li>인이어 8개 회수</li>
+        <li>비닐 폐기 (고객에게 보여드린 후)</li>
+        <li><strong>03 레이어에 무대 컷 삽입 완료</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="narrow footer-inner">
+    <div class="row">
+      <span>© 오가렌 · 설치가이드 포맷 패러디 v0.1</span>
+      <span>내부용 · 대외 배포 금지</span>
+    </div>
+    <p class="disclaimer">
+      <strong>안내.</strong> 이 문서는 오가렌 설치가이드 서식을 빌린 <strong>비공식 유머물</strong>입니다.
+      실제 시공 기준은 「슬립퍼 시그니처 매트리스 설치 가이드」 원본을 따르십시오.
+      ATEEZ 및 'BAD' 관련 명칭 · 이미지 · 안무의 권리는 각 권리자에게 있으며,
+      광고 · SNS 등 대외 홍보에 사용하려면 <strong>초상권 및 상표 사용 허락이 별도로 필요합니다.</strong>
+    </p>
+  </div>
+</footer>
+</body>
+</html>
